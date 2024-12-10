@@ -5,11 +5,11 @@ import { Platform, View } from 'react-native';
 import { HapticTab } from '@/components/HapticTab';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
-import { backgroundColors, COLORS } from '@/constants'
+import { COLORS } from '@/constants'
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 export default function TabLayout() {
-  // const colorScheme = useColorScheme();
+  const colorScheme = useColorScheme();
 
   return (
     <Tabs
@@ -17,7 +17,7 @@ export default function TabLayout() {
         tabBarActiveTintColor: "blue",
         headerShown: true,
         tabBarButton: HapticTab,
-        // tabBarBackground: (TabBarBackground),
+        tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
           ios: {
             // Use a transparent background on iOS to show the blur effect
@@ -26,6 +26,8 @@ export default function TabLayout() {
           default: {},
         }),
       }}>
+
+
       <Tabs.Screen
         name="index"
         options={{
@@ -40,7 +42,8 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
         }}
       />
+
+      
     </Tabs>
-  
   );
 }

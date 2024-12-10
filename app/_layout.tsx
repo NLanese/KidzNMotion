@@ -47,10 +47,10 @@ export default function RootLayout() {
       <View style={{ flex: 1 }}>
       <AppBackground>
         <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false, title: "Kidz-N-Motion"}} />
+          <Stack.Screen name="index" options={{ title: 'Welcome' }} />
           <Stack.Screen name="+not-found" />
         </Stack>
-        {/* <StatusBar style="auto" /> */}
+        <StatusBar style="auto" />
       </AppBackground>
       </View>
     </RecoilRoot>
