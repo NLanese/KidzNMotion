@@ -7,6 +7,7 @@ import { StatusBar } from 'expo-status-bar';
 
 // React
 import { useEffect } from 'react';
+import { View } from 'react-native';
 import 'react-native-reanimated';
 
 // Recoil
@@ -43,13 +44,15 @@ export default function RootLayout() {
   /////////////////
   return (
     <RecoilRoot>
+      <View style={{ flex: 1 }}>
       <AppBackground>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false, title: "Kidz-N-Motion"}} />
           <Stack.Screen name="+not-found" />
         </Stack>
-        <StatusBar style="auto" />
+        {/* <StatusBar style="auto" /> */}
       </AppBackground>
+      </View>
     </RecoilRoot>
   );
 }

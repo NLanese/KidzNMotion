@@ -106,7 +106,7 @@ const Gradient: React.FC<GradientProps> = ({
     }
 
     style = {
-      ...style,
+      ...resolvedStyle,
       justifyContent: "center",
       alignItems: "center",
     };

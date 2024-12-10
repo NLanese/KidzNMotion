@@ -14,7 +14,7 @@ const AppBackground: React.FC<AppBackgroundProps> = ({ children }) => {
     <Gradient
       colorOne={COLORS.gradientColor1}
       colorTwo={COLORS.gradientColor2}
-      style={{ height: "100%" }}
+      style={{ height: '100%', width: '100%'}}
     >
       {children}
     </Gradient>
