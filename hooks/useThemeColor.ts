@@ -3,7 +3,7 @@
  * https://docs.expo.dev/guides/color-schemes/
  */
 
-import { Colors } from '@/constants/Colors';
+import { COLORS } from '@/constants';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 export function useThemeColor(
@@ -16,6 +16,6 @@ export function useThemeColor(
   if (colorFromProps) {
     return colorFromProps;
   } else {
-    return Colors[theme][colorName];
+    return COLORS.scheme0;
   }
 }
