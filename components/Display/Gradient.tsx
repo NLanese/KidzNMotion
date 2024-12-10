@@ -1,12 +1,8 @@
 
 // React
 import React, { ReactNode } from "react";
-import { View, Text, StyleProp, ViewStyle } from "react-native";
-import LinearGradient from "react-native-linear-gradient";
-
-// Recoil
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { userState, tokenState, clientListState, colorState, fontState, sizeState, videoDataState, avatarState, meetingState, assignState, firstOpen, subscriptionState, errorDataState} from "../../../Recoil/atoms";
+import { View, StyleProp, ViewStyle, StyleSheet } from "react-native";
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 // Define the types for the props
@@ -40,10 +36,14 @@ const Gradient: React.FC<GradientProps> = ({
   children,
 }) => {
   // Null value guards
+
   if (!colorOne || !colorTwo) {
     throw new Error(
       "Error: <Gradient> Components need to have color values for both colorOne and colorTwo props!"
     );
+  }
+  else{
+    console.log(colorOne, "  ", colorTwo)
   }
 
   if (hollow) {

@@ -1,4 +1,3 @@
-// import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 
 // Expo Packages and Services
 import { useFonts } from 'expo-font';
@@ -15,38 +14,42 @@ import { RecoilRoot } from 'recoil';
 
 // Custom
 import AppBackground from '@/components/AppBackground';
-// import { useColorScheme } from '@/hooks/useColorScheme';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  // const colorScheme = useColorScheme();
+
+  // Loads Fonts
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
 
+  // Hides Splash Screen when Loading is concluded
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
     }
   }, [loaded]);
 
+  // Returns nothing if still loading
   if (!loaded) {
     return null;
   }
 
+
+  /////////////////
+  // Main Return //
+  /////////////////
   return (
-    // <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-    <AppBackground>
-      <RecoilRoot>
+    <RecoilRoot>
+      <AppBackground>
         <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="(tabs)" options={{ headerShown: false, title: "Kidz-N-Motion"}} />
           <Stack.Screen name="+not-found" />
         </Stack>
         <StatusBar style="auto" />
-      </RecoilRoot>
-    </AppBackground>
-    // </ThemeProvider>
+      </AppBackground>
+    </RecoilRoot>
   );
 }
