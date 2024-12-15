@@ -47,7 +47,7 @@ export default function RootLayout() {
       <View style={{ flex: 1 }}>
       <AppBackground>
         <Stack>
-          <Stack.Screen name="welcome" options={{ title: 'Welcome' }} />
+          <Stack.Screen name="index" options={{ title: 'Welcome' }} />
           <Stack.Screen name="+not-found" />
         </Stack>
         <StatusBar style="auto" />
