@@ -3,11 +3,11 @@ import React, { useState, useEffect } from "react";
 
 // Apollo graphQL
 import { useMutation } from '@apollo/client';
-import { USER_LOGIN, CREATE_USER_TO_USER_NOTIFICATION } from "../../../GraphQL/operations";
+import { USER_LOGIN, CREATE_USER_TO_USER_NOTIFICATION } from "../GraphQL/operations";
 
 // Recoil
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { userState, tokenState, clientListState, colorState, fontState, sizeState, videoDataState, avatarState, meetingState, assignState, firstOpen, subscriptionState, errorDataState} from "../../../Recoil/atoms";
+import { userState, tokenState, clientListState, colorState, fontState, sizeState, videoDataState, avatarState, meetingState, assignState, firstOpen, subscriptionState, errorDataState} from "../Recoil/atoms";
 
 
 
